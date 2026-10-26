@@ -1,0 +1,39 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harbor Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Harbor Board</h1>
+    <p>A shared notice board. Leave a note and everyone who visits can read it.</p>
+  </header>
+
+  <main>
+    <form id="form" class="post">
+      <label>Your name
+        <input name="name" maxlength="40" required autocomplete="name">
+      </label>
+      <label>Message
+        <textarea name="text" maxlength="280" rows="3" required></textarea>
+      </label>
+      <div class="row">
+        <span id="count">280 left</span>
+        <button type="submit">Post note</button>
+      </div>
+      <p id="error" role="alert"></p>
+    </form>
+
+    <section aria-live="polite">
+      <h2>Notes</h2>
+      <ul id="list"></ul>
+      <p id="empty" hidden>No notes yet. Post the first one.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
