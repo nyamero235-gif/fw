@@ -1,0 +1,55 @@
+:root {
+  --paper: #e9eef2;
+  --card: #ffffff;
+  --ink: #12263a;
+  --muted: #5c6f80;
+  --line: #c3cfd9;
+  --signal: #f2b705;
+  --danger: #b3261e;
+  font-family: Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f1c29; --card: #172a3b; --ink: #e8eef4;
+    --muted: #93a6b6; --line: #2b4156; --danger: #ff8a80;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  line-height: 1.6; font-size: 1.05rem;
+}
+.top {
+  padding: 3rem 1.25rem 2rem; max-width: 40rem; margin: 0 auto;
+  border-bottom: 6px solid var(--signal);
+}
+h1 { margin: 0 0 .5rem; font-size: clamp(2.4rem, 8vw, 3.8rem); letter-spacing: -.02em; line-height: 1.05; }
+h2 { font-size: 1.3rem; margin: 2rem 0 .75rem; }
+.top p { margin: 0; color: var(--muted); max-width: 32rem; }
+main { max-width: 40rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+
+.post { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 1.25rem; display: grid; gap: 1rem; }
+label { display: grid; gap: .35rem; font-weight: bold; font-size: .95rem; }
+input, textarea {
+  font: inherit; font-weight: normal; color: inherit; background: var(--paper);
+  border: 1px solid var(--line); border-radius: 4px; padding: .6rem .7rem; resize: vertical;
+}
+input:focus-visible, textarea:focus-visible, button:focus-visible { outline: 3px solid var(--signal); outline-offset: 2px; }
+.row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+#count { color: var(--muted); font-size: .9rem; }
+button {
+  font: inherit; font-weight: bold; cursor: pointer; border: 0; border-radius: 4px;
+  padding: .6rem 1.2rem; background: var(--signal); color: #12263a;
+}
+button:hover { filter: brightness(.95); }
+button:disabled { opacity: .6; cursor: wait; }
+#error { margin: 0; color: var(--danger); min-height: 1.2em; font-size: .95rem; }
+
+ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+li { background: var(--card); border-left: 4px solid var(--signal); border-radius: 0 6px 6px 0; padding: .9rem 1.1rem; }
+li p { margin: .25rem 0 .5rem; overflow-wrap: anywhere; }
+.meta { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-size: .9rem; color: var(--muted); }
+.meta strong { color: var(--ink); }
+.del { background: none; padding: 0; color: var(--muted); font-weight: normal; text-decoration: underline; }
+.del:hover { color: var(--danger); filter: none; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
